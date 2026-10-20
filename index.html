@@ -26,7 +26,7 @@
         margin: 0;
         padding: 0;
         font-family: "Poppins", sans-serif;
-        background: url("background.jpg") no-repeat center center fixed;
+        background: url("background.webp") no-repeat center center fixed;
         background-size: cover;
         height: 100vh;
         width: 100vw;
@@ -34,7 +34,7 @@
         color: #3d2b1f;
       }
 
-      /* ── fallback gradient if background.jpg is missing ── */
+      /* ── fallback gradient if background.webp is missing ── */
       body::before {
         content: "";
         position: fixed;
@@ -208,7 +208,9 @@
         object-fit: cover;
         border-radius: 6px;
       }
-      img[src="photos/memory10.jfif"] { transform: rotate(180deg); }
+      img[src="photos/memory10.webp"] {
+        transform: rotate(180deg);
+      }
       .memory-card p {
         font-family: "Dancing Script";
         margin-top: 10px;
@@ -513,8 +515,10 @@
         .memory-card img {
           height: 210px;
         }
-        img[src="photos/memory10.jfif"] { transform: rotate(180deg); }
-      .memory-card p {
+        img[src="photos/memory10.webp"] {
+          transform: rotate(180deg);
+        }
+        .memory-card p {
           font-size: 1.1rem;
         }
         nav {
@@ -673,13 +677,13 @@
      1. Replace BIRTHDAY_PERSON_NAME with the birthday person's name
      2. Replace YOUR_NAME with your name (for the letter)
      3. Set ANNIVERSARY_DATE to your special date (format: YYYY-MM-DD)
-     4. Replace profile.jpg with the birthday person's photo
-     5. Replace photos/memory1.jfif … photos/memory12.jfif with your own photos
+     4. Replace photos/profile.webp with the birthday person's photo
+     5. Edit the MEMORIES array in memories.js to change gallery photos and captions
      6. Edit the MEMORY CAPTIONS in the Memories section
      7. Replace music.mp3 with your chosen song
      8. Edit the LETTER TEXT in the textParts array in the <script>
      9. Edit the SECRET MESSAGE in the #secret-final div
-    10. Optionally replace background.jpg with your own background
+    10. Optionally replace background.webp with your own background
      ============================================================ -->
 
     <!-- PRE-SCREEN -->
@@ -722,10 +726,11 @@
      HOME PAGE
      ============================================================ -->
     <div id="home" class="page active">
-      <!-- ✏️ EDIT: Replace profile.jpg with the birthday person's photo -->
+      <!-- ✏️ EDIT: Replace photos/profile.webp with the birthday person's photo -->
       <div class="profile-frame" onclick="heartBurst(event)">
         <img
-          src="photos/profile.png" alt="Mariel smiling and holding white roses"
+          src="photos/profile.webp"
+          alt="Mariel smiling and holding white roses"
           onerror="
             this.src =
               'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><circle cx=%22100%22 cy=%22100%22 r=%22100%22 fill=%22%23ffb6c1%22/><text x=%2250%25%22 y=%2255%25%22 font-size=%2280%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>🎂</text></svg>'
@@ -748,141 +753,9 @@
         <h2 style="font-family: &quot;Dancing Script&quot;; font-size: 3rem">
           Our Moments ✨
         </h2>
-        <div class="memory-wrap">
-          <!-- ✏️ EDIT: Replace photos/memory1.jfif … and update captions -->
-          <div class="memory-card" onclick="openPreview('photos/memory1.jfif')">
-            <img
-              src="photos/memory1.jfif" alt="Our memory 1 together" loading="lazy"
-              onerror="
-                this.src =
-                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 180 200%22><rect width=%22180%22 height=%22200%22 fill=%22%23ffe0ec%22 rx=%226%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>📸</text></svg>'
-              "
-            />
-            <p>A moment I'll never forget 🤍</p>
-          </div>
-          <div class="memory-card" onclick="openPreview('photos/memory2.jfif')">
-            <img
-              src="photos/memory2.jfif" alt="Our memory 2 together" loading="lazy"
-              onerror="
-                this.src =
-                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 180 200%22><rect width=%22180%22 height=%22200%22 fill=%22%23ffe0ec%22 rx=%226%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>📸</text></svg>'
-              "
-            />
-            <p>Your smile lights up the room ✨</p>
-          </div>
-          <div class="memory-card" onclick="openPreview('photos/memory3.jfif')">
-            <img
-              src="photos/memory3.jfif" alt="Our memory 3 together" loading="lazy"
-              onerror="
-                this.src =
-                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 180 200%22><rect width=%22180%22 height=%22200%22 fill=%22%23ffe0ec%22 rx=%226%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>📸</text></svg>'
-              "
-            />
-            <p>The night I realised how lucky I am 🌙</p>
-          </div>
-          <div class="memory-card" onclick="openPreview('photos/memory4.jfif')">
-            <img
-              src="photos/memory4.jfif" alt="Our memory 4 together" loading="lazy"
-              onerror="
-                this.src =
-                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 180 200%22><rect width=%22180%22 height=%22200%22 fill=%22%23ffe0ec%22 rx=%226%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>📸</text></svg>'
-              "
-            />
-            <p>Peace sign but you're my everything 💫</p>
-          </div>
-          <div class="memory-card" onclick="openPreview('photos/memory5.jfif')">
-            <img
-              src="photos/memory5.jfif" alt="Our memory 5 together" loading="lazy"
-              onerror="
-                this.src =
-                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 180 200%22><rect width=%22180%22 height=%22200%22 fill=%22%23ffe0ec%22 rx=%226%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>📸</text></svg>'
-              "
-            />
-            <p>Every picture of you feels like home 🏡</p>
-          </div>
-          <div class="memory-card" onclick="openPreview('photos/memory6.jfif')">
-            <img
-              src="photos/memory6.jfif" alt="Our memory 6 together" loading="lazy"
-              onerror="
-                this.src =
-                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 180 200%22><rect width=%22180%22 height=%22200%22 fill=%22%23ffe0ec%22 rx=%226%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>📸</text></svg>'
-              "
-            />
-            <p>A random day that became a favourite memory 🌌</p>
-          </div>
-          <div class="memory-card" onclick="openPreview('photos/memory7.jfif')">
-            <img
-              src="photos/memory7.jfif" alt="Our memory 7 together" loading="lazy"
-              onerror="
-                this.src =
-                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 180 200%22><rect width=%22180%22 height=%22200%22 fill=%22%23ffe0ec%22 rx=%226%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>📸</text></svg>'
-              "
-            />
-            <p>Our story, just two people choosing each other 💞</p>
-          </div>
-          <div class="memory-card" onclick="openPreview('photos/memory8.jfif')">
-            <img
-              src="photos/memory8.jfif" alt="Our memory 8 together" loading="lazy"
-              onerror="
-                this.src =
-                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 180 200%22><rect width=%22180%22 height=%22200%22 fill=%22%23ffe0ec%22 rx=%226%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>📸</text></svg>'
-              "
-            />
-            <p>Even silence feels beautiful with you 💕</p>
-          </div>
-          <div class="memory-card" onclick="openPreview('photos/memory9.jfif')">
-            <img
-              src="photos/memory9.jfif" alt="Our memory 9 together" loading="lazy"
-              onerror="
-                this.src =
-                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 180 200%22><rect width=%22180%22 height=%22200%22 fill=%22%23ffe0ec%22 rx=%226%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>📸</text></svg>'
-              "
-            />
-            <p>Wherever we go, it becomes special 🌍</p>
-          </div>
-          <div class="memory-card" onclick="openPreview('photos/memory10.jfif')">
-            <img
-              src="photos/memory10.jfif" alt="Our memory 10 together" loading="lazy"
-              onerror="
-                this.src =
-                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 180 200%22><rect width=%22180%22 height=%22200%22 fill=%22%23ffe0ec%22 rx=%226%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>📸</text></svg>'
-              "
-            />
-            <p>Little moments that became forever memories 📖</p>
-          </div>
-          <div class="memory-card" onclick="openPreview('photos/memory11.jfif')">
-            <img
-              src="photos/memory11.jfif" alt="Our memory 11 together" loading="lazy"
-              onerror="
-                this.src =
-                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 180 200%22><rect width=%22180%22 height=%22200%22 fill=%22%23ffe0ec%22 rx=%226%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>📸</text></svg>'
-              "
-            />
-            <p>You and me — always where it belongs ❤️</p>
-          </div>
-          <div class="memory-card" onclick="openPreview('photos/memory12.jfif')">
-            <img
-              src="photos/memory12.jfif" alt="Our memory 12 together" loading="lazy"
-              onerror="
-                this.src =
-                  'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 180 200%22><rect width=%22180%22 height=%22200%22 fill=%22%23ffe0ec%22 rx=%226%22/><text x=%2250%25%22 y=%2250%25%22 font-size=%2260%22 text-anchor=%22middle%22 dominant-baseline=%22middle%22>📸</text></svg>'
-              "
-            />
-            <p>Us… just us… and that's enough 💘</p>
-          </div>
+        <div class="memory-wrap" id="memory-gallery">
+          <!-- Gallery cards are generated from the MEMORIES array in memories.js. -->
 
-          <div class="memory-card" onclick="openPreview('photos/memory13.jfif')">
-            <img src="photos/memory13.jfif" alt="A smiling moment together" loading="lazy" />
-            <p>My favourite person to be silly with 💗</p>
-          </div>
-          <div class="memory-card" onclick="openPreview('photos/memory14.jfif')">
-            <img src="photos/memory14.jfif" alt="Together at a scenic hillside cafe" loading="lazy" />
-            <p>Beautiful views, better company 🌿</p>
-          </div>
-          <div class="memory-card" onclick="openPreview('photos/memory15.jfif')">
-            <img src="photos/memory15.jfif" alt="A playful selfie together" loading="lazy" />
-            <p>More little moments like this, please 💕</p>
-          </div>
           <!-- COUNTDOWN TIMER -->
           <!-- <div style="margin-top:35px;width:100%;display:flex;justify-content:center;">
 <div style="background:rgba(255,255,255,0.3);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:28px;padding:28px 30px;border:1px solid rgba(255,255,255,0.6);box-shadow:0 20px 60px rgba(214,51,132,.15),inset 0 1px 0 rgba(255,255,255,0.8);text-align:center;max-width:600px;width:90%;">
@@ -920,7 +793,6 @@
     <div id="song-panel">
       <!-- ✏️ EDIT: Change song title / subtitle -->
       <div id="song-title"></div>
-      <div id="song-sub">Playing for you ♡</div>
       <div id="visualizer">
         <div class="v-bar" style="height: 30px; animation-delay: 0s"></div>
         <div class="v-bar" style="height: 45px; animation-delay: 0.1s"></div>
@@ -942,13 +814,14 @@
       <a onclick="showPage('letter')">My Note</a>
     </nav>
 
+    <script src="memories.js?v=3"></script>
     <script>
       /* ============================================================
    ✏️  CUSTOMISATION VARIABLES — edit these!
    ============================================================ */
 
       // Name displayed in the pre-screen question
-      const BIRTHDAY_PERSON_NAME = "Mariel";
+const BIRTHDAY_PERSON_NAME = "Mariel";
 
       // Date the countdown counts UP from (your friendship / relationship start)
       // Format: 'YYYY-MM-DDTHH:MM:SS'
@@ -963,21 +836,13 @@
       //   center   — true to centre the text, false for left-aligned
       const textParts = [
         {
-          t: `From the very first moment you came into my life 🌍💞, every day became brighter and more beautiful because of you 📖💕.\n\nHere are some of the moments that mean the world to me:\n📍 Day 1 – The day our story began 💫\n📍 A rainy afternoon – laughing until our sides hurt ☔😂\n📍 That road trip – windows down, music loud 🎶🚗\n📍 The day you showed up when I needed you most ❤️\n📍 Right now – celebrating YOU on your special day 🎂\n\n`,
-          center: false,
-        },
-        {
-          t: `You make ordinary days feel extraordinary.\nThank you for just being YOU.\n\n`,
-          center: true,
-        },
-        {
-          t: `Happy Birthday! You are so loved, so appreciated, and so incredibly special. Here's to you and every amazing thing still to come 🥂✨🎉`,
+          t: `First and foremost, happy happiest birthday. Thank you for the memories, kulitan, asaran, sapakan, and everything. I want to say na I know na you're in a good place right now and you deserve everything na meron ka ngayon. You're one of the most generous persons I know, kahit na inaasar kita ng kuripot. I know na di naman natin alam kung anong meron sa future but I know na whatever happens, we will still be friends. Masyado kang maraming nalalaman para buhayin pa pag nag away tayo. Dejoke hehe.\n\nAyun lang, I hope na you'll enjoy your day and sana malibre mo ako.`,
           center: false,
         },
       ];
 
       // ✏️ EDIT: The secret message shown when the letter card is clicked after typing finishes
-      const SECRET_MESSAGE = `You mean the world to me ❤️<br><span style="font-size:1.5rem;opacity:.8;">— tap to close</span>`;
+      const SECRET_MESSAGE = `I hope you have a wonderful day!`;
 
       /* ============================================================
    PRE-SCREEN LOGIC
@@ -1062,6 +927,7 @@
    PAGE NAVIGATION
    ============================================================ */
       function showPage(id) {
+        if (id === "memories") renderMemories();
         document
           .querySelectorAll(".page")
           .forEach((p) => p.classList.remove("active"));

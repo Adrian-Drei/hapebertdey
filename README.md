@@ -39,10 +39,12 @@ Created as a special surprise experience with animations, memories, music, count
 ```
 /
 ├── index.html
-├── background.jpg
+├── background.webp
 ├── music.mp3
-├── profile_photo.jpeg
-├── memory1.jpeg ... memory12.jpeg
+├── memories.js
+└── photos/
+    ├── profile.webp
+    └── memory1.webp ... memory15.webp
 └── README.md
 ```
 
